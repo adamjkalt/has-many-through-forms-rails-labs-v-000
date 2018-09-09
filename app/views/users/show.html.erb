@@ -1,5 +1,5 @@
 <h2> <%= @user.username %> </h2>
 
-<% @unique_commenters.each do |commenter| %>
-  <%= link_to commenter.username, user_path(commenter) %>
+<% @user_comments.each do |comment| %>
+  <%= link_to comment.username, user_path(comment) %>
   <% end %>
