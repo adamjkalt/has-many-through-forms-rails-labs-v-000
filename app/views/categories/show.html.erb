@@ -1,8 +1,7 @@
 <h2> <%= @category.name %> </h2>
-<h2> <%= @post.content %> </h2>
 
-<% @post.comments.each do |comment| %>
-  <%= "#{comment.user.username}: #{comment.content}" %>
+<% @category.posts.each do |post| %>
+  <li> <%= "#{post.title}" %> </li>
 <% end %>
 
 <% @unique_commenters.each do |commenter| %>
