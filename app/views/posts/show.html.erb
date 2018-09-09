@@ -4,3 +4,6 @@
 <% @post.comments.each do |comment| %>
   <%= "#{comment.user.username}: #{comment.content}" %>
 <% end %>
+
+<% @unique_commenters.each do |commenter| %>
+  <%= link_to commenter.username, user_path(commenter) %>
