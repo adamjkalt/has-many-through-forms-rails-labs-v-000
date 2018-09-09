@@ -1,5 +1,5 @@
 <h2> <%= @user.username %> </h2>
 
 <% @user_comments.each do |post| %>
-  <%= link_to comment.username, user_path(comment) %>
+  <%= link_to post.title, post_path(post) %>
   <% end %>
