@@ -1,9 +1,6 @@
 <h2> <%= @category.name %> </h2>
 
 <% @category.posts.each do |post| %>
-  <li> <%= "#{post.title}" %> </li>
-<% end %>
-
-<% @unique_commenters.each do |commenter| %>
-  <%= link_to commenter.username, user_path(commenter) %>
+  <%= "#{post.title}" %>
+  <%= link_to post.title, post_path(post) %>
   <% end %>
