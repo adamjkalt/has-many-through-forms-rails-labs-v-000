@@ -1,6 +1,16 @@
 <h2> <%= @post.title %> </h2>
 <h2> <%= @post.content %> </h2>
 
+<%= form_for [@post.comments.build] do |f| %>
+  <%= f.label "Comment" %>
+  <%= f.text_field :content %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
+    <%= categories_fields.text_field :name %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+
 <% @post.comments.each do |comment| %>
   <%= "#{comment.user.username}: #{comment.content}" %>
 <% end %>
