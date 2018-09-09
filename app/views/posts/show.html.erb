@@ -5,6 +5,10 @@
   <%= "#{comment.user.username} says: #{comment.content}" %>
 <% end %>
 
+<% @post.categories.each do |category| %>
+  <%= "#{category.name}" %>
+<% end %>
+
 <% @unique_commenters.each do |commenter| %>
   <%= link_to commenter.username, user_path(commenter) %>
   <% end %>
