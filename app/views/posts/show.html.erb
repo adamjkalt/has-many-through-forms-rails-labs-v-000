@@ -2,7 +2,7 @@
 <h2> <%= @post.content %> </h2>
 
 <% @post.comments.each do |comment| %>
-  <%= "#{comment.user.username}: #{comment.content}" %>
+  <%= "#{comment.user.username} says: #{comment.content}" %>
 <% end %>
 
 <% @unique_commenters.each do |commenter| %>
